@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="relative flex h-16 items-center justify-center text-red-600 font-medium text-4xl">Welcome To Los Codos Customs</h1>
+<section class="flex space-x-4">
+    <div class="car-container">
+        <img src="../../static/images/gian-gomez-SU6MbWxLozY-unsplash copy.jpg" alt="corvette" class="car-image">
+        <p class="mt-2">CederVette</p>
+        <p class="mt-1">2026</p>
+    </div>
+    <div class="car-container">
+        <img src="../../static/images/bailey-alexander-iOjSzJUsqfs-unsplash copy.jpg" alt="corvette" class="car-image">
+        <p class="mt-2">BettleVette</p>
+        <p class="mt-1">2026</p>
+    </div>
+    <div class="car-container">
+        <img src="../../static/images/nicolas-savignat-VKi5DKAQ7Eo-unsplash copy.jpg" alt="corvette" class="car-image">
+        <p class="mt-2">RedHawk</p>
+        <p class="mt-1">2026</p>
+    </div>
+</section>
+<link rel="stylesheet" href="{{ url_for('static', filename='new_style.css') }}">
+{% endblock %}
+
+
+

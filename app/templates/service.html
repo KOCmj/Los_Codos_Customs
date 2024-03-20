@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="container px-2">
+        <div class="slider-wrapper relative max-w-48rem m-0">
+            <div class="slider flex aspect-auto aspect-ratio-16/9 overflow-auto">
+                <div class="slide">
+                    <img id = "slide-1" src="{{ url_for('static', filename='images/tim-mossholder-V37iTrYZz2E-unsplash copy.jpg') }}" alt="">
+                    <p class="slide-text">Beyond Los</p>
+                    <h1 class = "slide-text">Need an oil change, we got it.</h1>
+                </div>
+                <div class="slide">
+                    <img id = "slide-2" src="{{ url_for('static', filename='images/sten-rademaker-UZUzvJEvKnI-unsplash copy.jpg') }}" alt="">
+                    <p class="slide-text">Codos to you</p>
+                    <h1 class = "slide-text">No one knows your vehicle better than the experts</h1>
+                </div>
+                <div class="slide">
+                    <img id = "slide-3" src="{{ url_for('static', filename='images/oli-woodman-oZOb6z2hWTU-unsplash copy.jpg') }}" alt="">
+                    <p class="slide-text">Customizationation at its finest</p>
+                    <h1 class = "slide-text">New tires?... shhhh...</h1>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+            </div>
+    <section>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
