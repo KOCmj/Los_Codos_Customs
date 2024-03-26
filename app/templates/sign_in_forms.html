@@ -1,32 +1,4 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<main class="container p-5">
-    <div class="row">
-        <aside class="col-12 col-md-6">
-            <h2>Sign In</h2>    
-            {% include 'sign_in_forms.html' %}
-            <!-- Flash message -->
-            <div class="flash">
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            <div class="alert alert- {{ category }}">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            <div>
-        </aside>
-    </div>
-</main>
-{% endblock %}
-
-
-
-
-<!-- <style>
+<style>
     img {
         width: 50%;
     }
@@ -73,11 +45,10 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-        <div>
+        </div>
   
       <p class="mt-10 text-center text-sm text-red-500">
         Not a member?
         <a href="{{ url_for('auth.signup') }}" class="font-semibold leading-6 text-red-600 hover:text-indigo-500">Join the lab today!</a>
       </p>
-    </div>     
- -->
+    </div> 

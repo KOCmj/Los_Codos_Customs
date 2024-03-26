@@ -32,17 +32,6 @@ body {
     padding-top: 5px;
 }
 
-/* .button-container {
-    color: rgba(0, 0, 0, 0.74);
-    display: flex;
-    align-content: space-around;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    border-color: 1px solid grey;
-    padding-top: 5px;
-} */
-
 button {
     border-color: rgba(255, 255, 155, 0.74);
 }
@@ -67,12 +56,6 @@ input {
 }
 
 .main-image {
-    /* margin: 0;
-    position: absolute;
-    /* top: 50%; */
-    /* left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
     width: 50%;
 }
 
@@ -81,14 +64,6 @@ input {
     justify-content: flex-end;
 }
 
-/* form {
-    display: flex;
-    align-content: space-around;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    padding-top: 5px;
-} */
 
 .input {
     display: flex;

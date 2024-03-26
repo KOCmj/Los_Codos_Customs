@@ -15,7 +15,7 @@
     <main class = "bg-light text-center">
         <h1 class = "text-success">Thank you for participating</h1>
         <p class = "text-success">Your submission was successful. Welcome to the KOC lab!</p>
-        <p>User Token: {{ user_token }}</p>
+        <p>User Token: {{ current_user.token }}</p>
         <a href="{{ url_for('auth.signin') }}">Sign In</a>
     <main>
 {% endblock %}

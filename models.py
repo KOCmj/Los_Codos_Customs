@@ -63,45 +63,33 @@ class User(db.Model, UserMixin):
     
     def __repr__(self):
         return f'User {self.email} has successfully been added to the KOC database!'
-    
-class Contact(db.Model):
+    #Change to cars keep user
+class Car(db.Model):
     id = db.Column(db.String, primary_key = True)
     name = db.Column(db.String(150), nullable = False)
-    first_name = db.Column(db.String(150), nullable = False)
-    last_name = db.Column(db.String(150), nullable = False)
-    email = db.Column(db.String(200))
-    city = db.Column(db.String(150), nullable = False)
-    state = db.Column(db.String(150), nullable = False)
-    street_address = db.Column(db.String(150), nullable = False)
-    zip_code = db.Column(db.String(20))
-    postal_code = db.Column(db.String(20))
-    region = db.Column(db.String(150), nullable = False)
+    year = db.Column(db.String(20), nullable = False)
+    model = db.Column(db.String(150), nullable = False)
+    make = db.Column(db.String(200))
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
-    def __init__(self, name, email, city, first_name, last_name, street_address, state, zip_code, user_token, postal_code, region, id = ''):
+    def __init__(self, name, year, model, make, user_token, id = ''):
         self.id = self.set_id()
         self.name = name
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
-        self.city = city
-        self.state = state
-        self.street_address = street_address
-        self.zip_code = zip_code
-        self.postal_code = postal_code
-        self.region = region
+        self.year = year
+        self.model = model
+        self.make = make
 
         self.user_token = user_token
 
     def __repr__(self):
-        return f'The following contact has been added to the KOC club: {self.name}'
+        return f'The following car has been searched: {self.name}'
     
     def set_id(self):
         return (secrets.token_urlsafe())
     
-class ContactSchema(ma.Schema):
+class CarSchema(ma.Schema):
     class Meta:
-        fields = ['id', 'name', 'first_name', 'last_name', 'email', 'city', 'state', 'street_address', 'zip_code', 'postal_code', 'region']
+        fields = ['id', 'name', 'year', 'model', 'make']
 
-contact_schema = ContactSchema()
-contacts_schema = ContactSchema(many = True)
+car_schema = CarSchema()
+cars_schema = CarSchema(many = True)

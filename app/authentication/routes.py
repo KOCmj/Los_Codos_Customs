@@ -1,4 +1,4 @@
-from forms import UserLoginForm
+from forms import UserLoginForm, SignInForm
 from models import User, db, check_password_hash
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 
@@ -45,7 +45,7 @@ def signup():
 
 @auth.route('/signin', methods=['GET', 'POST'])
 def signin():
-    form = UserLoginForm()
+    form = SignInForm()
 
     try:
         if request.method == 'POST' and form.validate_on_submit():
@@ -53,7 +53,7 @@ def signin():
             password = form.password.data
             print(email)
 
-            logged_user = User.query.filter_by(User.email == email).first()
+            logged_user = User.query.filter_by(email = email).first()
             if logged_user and check_password_hash(logged_user.password, password):
                 login_user(logged_user)
                 flash('Welcome back to the KOC lab!', 'success')
@@ -62,11 +62,10 @@ def signin():
                 flash('Failed to enter the KOC Lab', 'auth-failed')
     except ValueError:
         flash('Invalid data: Please check your form')
-
     return render_template('sign_in.html', form=form)
 
 
 @auth.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('site.index'))
+    return redirect(url_for('site.home'))

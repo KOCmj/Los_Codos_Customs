@@ -23,7 +23,6 @@
 }
 
 .slider img {
-    /* flex: 1 0 auto; */
     width: 100%;
     height: 100%;
     scroll-snap-align: start;
@@ -44,8 +43,6 @@
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    /* background-color: red;
-    opacity: 0.75; */
     transition: opacity ease 250ms;
 }
 
@@ -60,7 +57,6 @@
 }
 
 section {
-    /* background-color: black; */
     background-color: rgba(255, 250, 122, 0.811);
     z-index: 1;
 }

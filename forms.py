@@ -14,3 +14,8 @@ class UserLoginForm(FlaskForm):
     region = StringField('Region', validators=[DataRequired()])
     postal_code = StringField('Postal Code', validators=[DataRequired()])
     submit_button = SubmitField()
+
+class SignInForm(FlaskForm):
+    email = StringField('Email', validators = [DataRequired(), Email()])
+    password = PasswordField('Password', validators = [DataRequired()])
+    submit_button = SubmitField()

@@ -28,4 +28,3 @@ def home():
 @site.route('/join_lab')
 def join_lab():
     return render_template('forms.html')
-
